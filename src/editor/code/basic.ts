@@ -26,18 +26,12 @@ class BasicEditor extends CustomSelection {
         const editorInputEvent = new EditorEvent(event);
         return eventlistener(editorInputEvent);
       });
+      return;
     }
 
     this.$root.addEventListener(eventType, (event: Event) => {
-      if (eventType === 'selectionchange') {
-        if ((event as InputEvent).inputType === 'deleteContentBackward') {
-          const editorEvent = new EditorEvent(event);
-          return eventlistener(editorEvent);
-        }
-      } else {
-        const editorEvent = new EditorInputEvent(event);
-        return eventlistener(editorEvent);
-      }
+      const editorEvent = new EditorInputEvent(event);
+      return eventlistener(editorEvent);
     });
   }
 

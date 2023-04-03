@@ -1,4 +1,4 @@
-class EditorEvent {
+export class EditorEvent {
   public nativeEvent: Event;
 
   constructor(event: Event) {
@@ -6,6 +6,4 @@ class EditorEvent {
   }
 }
 
-class EditorInputEvent extends EditorEvent {}
-
-export { EditorEvent, EditorInputEvent };
+export class EditorInputEvent extends EditorEvent {}
